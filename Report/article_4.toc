@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}{Introduction}}{2}{section.1}%
+\contentsline {section}{\numberline {2}{Fonti dati}}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}{Web Scraping}}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}{Web Api}}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}{Data Exploration}}{2}{section.3}%
+\contentsline {section}{\numberline {4}{Data Quality}}{2}{section.4}%
+\contentsline {section}{\numberline {5}{Data Cleaning}}{2}{section.5}%
+\contentsline {section}{\numberline {6}{Data Integration}}{2}{section.6}%
+\contentsline {section}{\numberline {7}{Results and Discussion}}{2}{section.7}%
+\contentsline {subsection}{\numberline {7.1}{Subsection}}{3}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}{Subsubsection}}{3}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}{Table}}{4}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}{Figure Composed of Subfigures}}{4}{subsection.7.2}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
