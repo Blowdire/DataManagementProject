@@ -90,108 +90,62 @@ Il progetto realizzato consiste nella creazione di una base di dati a grafo cont
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\section{Introduction}
-
-A statement requiring citation \cite{Figueredo:2009dg}.
-
-\lipsum[1-3] % Dummy text
-
-Some mathematics in the text: $\cos\pi=-1$ and $\alpha$.
+\section{Introduzione}
+Lo scopo del progetto consiste nella realizzazione di un dataset riguardante vari prodotti Marvel, fra cui personaggi, film, serie tv e fumetti.
+L'obiettivo del progetto è di ottenere una sorta di "rete sociale" di super eroi o personaggi marvel, i quali sono collegati ai rispettivi fumetti, film , serie tv, o rispettivi collegamenti interpersonali fra personaggi e personaggi.
  
 %----------------------------------------------------------------------------------------
 %	METHODS
 %----------------------------------------------------------------------------------------
 
 \section{Fonti dati}
-\subsection{Web Scraping}
-\subsection{Web Api}
+Per l'ottenimento dei dati sono stati utilizzati due metodi diversi: l'utilizzo di una Web API e Web Scraping.
 
+\subsection{Web Scraping}
+Per la parte riguardante il Web Scraping come sorgente dati è stata utilizata la Marvel Cinematic Universe Wiki.
+
+Lo scraping è stato effettuato eseguendo un notebook python.
+I passi eseguiti dal notebook per completare lo scraping sono:
+\begin{enumerate}
+\item Ottenimento dalla pagina relativa a tutti i personaggi della wiki i nomi dei personaggi con i relativi link alla pagina personale.
+\item per ogni personaggio aprire la pagina personale e ottenere sempre tramite scraping le informazioni rilevanti, come ad esempio: biografia, lista di film in cui è presente il personaggio, lista di serie tv in cui è presente il personaggio e relazioni con altri personaggi.
+\item Per ogni film trovato nelle pagine dei personaggi aprire la pagina relativa al film e ottenere tramite scraping le informazioni del film come ad esempio la trama, i registi, scrittori, compositori, incasso, data di uscita e durata del film.
+\item Per ogni serie trovata nelle pagine dei personaggi aprire la pagina relativa alla serie e ottenere tramite scraping le informazioni della serie in questione, come ad esempio la trama, i registi, i produttori e i compositori
+\item Salvataggio temporaneo all'interno di file csv di film, serie tv e personaggi per essere processati in seguito.
+\end{enumerate}
+
+\subsection{Web Api}
+Per l'ottenimento dei dati tramite web API è stata utilizzato il servizio formito dalla Marvel che mette a disposizione una sua Web Api per ottenere i dati relativi a personaggi e fumetti.
+L'ottenimento dei dati è avvenuto tramite esecuzione di un notebook python.
+L'esecuzione consiste nei seguenti passi:
+\begin{enumerate}
+\item Ottenimento dei dati dei personaggi in formato JSON tramite chiamata al relativo endpoint della web api a gruppi di 100 personaggi, in quanto è il limite imposto dagli sviluppatori del servizio.
+\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti.
+\item Ottenimento dei dati dei fumetti in formato JSON tramite chiamata al relativo endpoint della web api a gruppi di 100 fumetti, in quanto è il limite imposto dagli sviluppatori del servizio.
+\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti.
+\end{enumerate}
 \section{Data Exploration}
-\section{Data Quality}
-\subsection{Completezza}
+La fase di data exploration è stata realizzata sempre utilizzando python con alcune librerie grafiche per la creazione di visualizzazioni.
+
+\subsection{Data Quality}
+Le principali problematiche riscontrate nella qualità dei dati sono state riscontrate nelle biografie dei personaggi e nelle relazioni tra personaggi ottenute tramite web scraping;
+\subsubsection{Data Quality e Cleaning Biografia}
+Per quanto riguarda la qualità dei dati delle biografie le principali problematiche sono:
+\begin{enumerate}
+	\item Il notebook salva i vari paragrafi delle biografie come una lista di stringhe, quindi prima di tutto la biografia viene trasformata in una stringa, concatenando le varie stringhe presenti nella lista e inserendo un carattere newLine fra un elemento e l'altro.
+	\item Il notebook inoltre salvava alcuni paragrafi della biografia più volte, per questo prima di concatenare la stringa viene effettuato un controllo per vedere se la porzione di stringa è già stata aggiunta alla stringa finale
+	\item Infine viene fatto un escaping dei caratteri speciali, come ad esempio il carattere " o ', in modo da non avere problemi nell'inserimento nel database dei dati.
+\end{enumerate}
+\subsubsection{Completezza}
 \section{Data Cleaning}
 \section{Data Integration}
+\section{Database}
+\
 \subsection{Schema matching}
 %----------------------------------------------------------------------------------------
 %	RESULTS AND DISCUSSION
 %----------------------------------------------------------------------------------------
 
-\section{Results and Discussion}
-
-Reference to Figure~\vref{fig:gallery}. % The \vref command specifies the location of the reference
-
-\begin{figure}[tb]
-\centering 
-\includegraphics[width=0.5\columnwidth]{GalleriaStampe} 
-\caption[An example of a floating figure]{An example of a floating figure (a reproduction from the \emph{Gallery of prints}, M.~Escher,\index{Escher, M.~C.} from \url{http://www.mcescher.com/}).} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
-\label{fig:gallery} 
-\end{figure}
-
-\lipsum[10] % Dummy text
-
-%------------------------------------------------
-
-\subsection{Subsection}
-
-\lipsum[11] % Dummy text
-
-\subsubsection{Subsubsection}
-
-\lipsum[12] % Dummy text
-
-\begin{description}
-\item[Word] Definition
-\item[Concept] Explanation
-\item[Idea] Text
-\end{description}
-
-\lipsum[12] % Dummy text
-
-\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-\item First item in a list
-\item Second item in a list
-\item Third item in a list
-\end{itemize}
-
-\subsubsection{Table}
-
-\lipsum[13] % Dummy text
-
-\begin{table}[hbt]
-\caption{Table of Grades}
-\centering
-\begin{tabular}{llr}
-\toprule
-\multicolumn{2}{c}{Name} \\
-\cmidrule(r){1-2}
-First name & Last Name & Grade \\
-\midrule
-John & Doe & $7.5$ \\
-Richard & Miles & $2$ \\
-\bottomrule
-\end{tabular}
-\label{tab:label}
-\end{table}
-
-Reference to Table~\vref{tab:label}. % The \vref command specifies the location of the reference
-
-%------------------------------------------------
-
-\subsection{Figure Composed of Subfigures}
-
-Reference the figure composed of multiple subfigures as Figure~\vref{fig:esempio}. Reference one of the subfigures as Figure~\vref{fig:ipsum}. % The \vref command specifies the location of the reference
-
-\lipsum[15-18] % Dummy text
-
-\begin{figure}[tb]
-\centering
-\subfloat[A city market.]{\includegraphics[width=.45\columnwidth]{Lorem}} \quad
-\subfloat[Forest landscape.]{\includegraphics[width=.45\columnwidth]{Ipsum}\label{fig:ipsum}} \\
-\subfloat[Mountain landscape.]{\includegraphics[width=.45\columnwidth]{Dolor}} \quad
-\subfloat[A tile decoration.]{\includegraphics[width=.45\columnwidth]{Sit}}
-\caption[A number of pictures.]{A number of pictures with no common theme.} % The text in the square bracket is the caption for the list of figures while the text in the curly brackets is the figure caption
-\label{fig:esempio}
-\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
