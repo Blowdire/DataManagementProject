@@ -27,7 +27,7 @@ oneside, % One page layout (no page indentation)
 headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
 ]{scrartcl}
-
+\usepackage{float}
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
@@ -91,7 +91,7 @@ Il progetto realizzato consiste nella creazione di una base di dati a grafo cont
 %----------------------------------------------------------------------------------------
 
 \section{Introduzione}
-Lo scopo del progetto consiste nella realizzazione di un dataset riguardante vari prodotti Marvel, fra cui personaggi, film, serie tv e fumetti.
+Lo scopo del progetto consiste nella realizzazione di un database a grafo riguardante vari prodotti Marvel, fra cui personaggi, film, serie tv e fumetti.
 L'obiettivo del progetto è di ottenere una sorta di "rete sociale" di super eroi o personaggi marvel, i quali sono collegati ai rispettivi fumetti, film , serie tv, o rispettivi collegamenti interpersonali fra personaggi e personaggi.
  
 %----------------------------------------------------------------------------------------
@@ -136,12 +136,39 @@ Per quanto riguarda la qualità dei dati delle biografie le principali problemat
 	\item Il notebook inoltre salvava alcuni paragrafi della biografia più volte, per questo prima di concatenare la stringa viene effettuato un controllo per vedere se la porzione di stringa è già stata aggiunta alla stringa finale
 	\item Infine viene fatto un escaping dei caratteri speciali, come ad esempio il carattere " o ', in modo da non avere problemi nell'inserimento nel database dei dati.
 \end{enumerate}
-\subsubsection{Completezza}
-\section{Data Cleaning}
+\subsubsection{Data Quality e Cleaning Relazioni}
+Per quanto riguarda la qualità dei dati delle relazioni interpersonali ottenute tramite web scraping la principale problematica consiste nell'assenza in alcune relazioni del nome del personaggio interessato, ad esempio ci sono relazioni che hanno come nome personaggio "Mother", "Father" e così via.
+Per risolvere questa problematica il notebook esegue le seguenti operazioni:
+\begin{enumerate}
+	\item Per ogni personaggio vengono recuperate le relative relazioni.
+	\item Per ogni relazione ottenuta viene effettuato un controllo sul nome del personaggio della relazione, se il nome non è presente all'interno della lista di personaggi la relazione viene scartata
+\end{enumerate}
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{plot_relazioni.png}
+  \caption{Grafico relativo alle relazioni tenute rispetto a quelle scartate}
+\end{figure}
+\subsection{Completezza}
+Sono state effettuate altre analisi riguardanti la completezza dei dati: in particolare al riguardo di attributi dei dati ottenuti.
+\subsubsection{Dati personaggi}
+Le analisi di completezza effettuate sui personaggi consistono nel confronto fra i dati ottenuti dalla web api e quelli ottenuti tramite web scraping. In particolare si può riscontrare una corrispondenza di 323 personaggi della web api con quelli ottenuti tramite web scraping, al netto dei 1559 personaggi della web api.
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{plot_corrispondenza_personaggi.png}
+  \caption{Grafico al numero di personaggi che sono collegabili con i dati ottenuti tramite web scraping.}
+\end{figure}
+\subsubsection{Descrizione fumetti}
+Le analisi di completezza effettuate sulle descrizioni dei fumetti, ottenute tramite web api, consiste nel vedere quanti fumetti possiedono una descrizione. In particolare circa 19000 fumetti non hanno descrizione al netto dei circa 50000 fumetti.
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{plot_descrizione_fumetti.png}
+  \caption{Grafico relativo al numero di fumetti con e senza descrizione}
+\end{figure}
 \section{Data Integration}
-\section{Database}
-\
 \subsection{Schema matching}
+\section{Database}
+\subsection{Struttura Database}
+\subsection{Nodi Database}
+\subsection{Relazioni database}
+\subsection{Statistiche database}
+
 %----------------------------------------------------------------------------------------
 %	RESULTS AND DISCUSSION
 %----------------------------------------------------------------------------------------

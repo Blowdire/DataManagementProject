@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.4)  4 JAN 2022 17:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.4)  5 JAN 2022 11:26
 entering extended mode
 **./article_4.tex
 (article_4.tex
@@ -234,7 +234,15 @@ Package tocbasic Info: babel extension for `lot' omitted
 \c@table=\count187
 Class scrartcl Info: Redefining `\numberline' on input line 6258.
 \bibindent=\dimen138
-) (structure.tex
+) (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count188
+\float@exts=\toks16
+\float@box=\box49
+\@float@everytoks=\toks17
+\@floatcapt=\box50
+)
+(structure.tex
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/classicthesis\classicthesis.st
 y
 Package: classicthesis 2018/06/03 v4.6 Typographic style for a classic-looking 
@@ -310,12 +318,12 @@ File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
 )
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype.sty
 Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
-\MT@toks=\toks16
-\MT@count=\count188
+\MT@toks=\toks18
+\MT@count=\count189
 LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen139
 LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
-\MT@listname@count=\count189
+\MT@listname@count=\count190
 
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/microtype\microtype-pdftex.def
 File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
@@ -361,12 +369,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen147
 \cmidrulekern=\dimen148
 \defaultaddspace=\dimen149
-\@cmidla=\count190
-\@cmidlb=\count191
+\@cmidla=\count191
+\@cmidlb=\count192
 \@aboverulesep=\dimen150
 \@belowrulesep=\dimen151
-\@thisruleclass=\count192
-\@lastruleclass=\count193
+\@thisruleclass=\count193
+\@lastruleclass=\count194
 \@thisrulewidth=\dimen152
 )
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/textcase\textcase.sty
@@ -401,12 +409,12 @@ Package scrlayer-scrpage Info: auto-selection of `pagestyleset=KOMA-Script'.
 1: subsection
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box49
+\ttl@box=\box51
 \beforetitleunit=\skip64
 \aftertitleunit=\skip65
 \ttl@plus=\dimen153
 \ttl@minus=\dimen154
-\ttl@toksa=\toks17
+\ttl@toksa=\toks19
 \titlewidth=\dimen155
 \titlewidthlast=\dimen156
 \titlewidthfirst=\dimen157
@@ -485,8 +493,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip89
 \cftfigindent=\skip90
 \cftfignumwidth=\skip91
-\c@lofdepth=\count194
-\c@lotdepth=\count195
+\c@lofdepth=\count195
+\c@lotdepth=\count196
 \cftbeforelottitleskip=\skip92
 \cftafterlottitleskip=\skip93
 \cftbeforetabskip=\skip94
@@ -521,8 +529,9 @@ Package caption Info: KOMA-Script document class detected.
 File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@caption@flags=\count196
-\c@continuedfloat=\count197
+\c@caption@flags=\count197
+\c@continuedfloat=\count198
+Package caption Info: float package is loaded.
 )
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/carlisle\remreset.sty
 
@@ -559,8 +568,8 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen165
-\Hy@linkcounter=\count198
-\Hy@pagecounter=\count199
+\Hy@linkcounter=\count199
+\Hy@pagecounter=\count266
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -577,7 +586,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count266
+\Hy@SavedSpaceFactor=\count267
 
 (C:\Program Files\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -592,7 +601,7 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count267
+\c@Hy@tempcnt=\count268
 
 (C:\Program Files\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
@@ -608,7 +617,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count268
+\Fld@menulength=\count269
 \Field@Width=\dimen167
 \Fld@charsize=\dimen168
 Package hyperref Info: Hyper figures OFF on input line 6075.
@@ -626,8 +635,8 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count269
-\c@Item=\count270
+\Hy@abspage=\count270
+\c@Item=\count271
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -639,8 +648,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count271
-\c@bookmark@seq@number=\count272
+\Fld@listcount=\count272
+\c@bookmark@seq@number=\count273
 
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.
 sty
@@ -707,8 +716,8 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
 (C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
 )
 (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
@@ -731,10 +740,10 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip103
 \enit@outerparindent=\dimen171
-\enit@toks=\toks20
-\enit@inbox=\box50
-\enit@count@id=\count273
-\enitdp@description=\count274
+\enit@toks=\toks22
+\enit@inbox=\box52
+\enit@count@id=\count274
+\enitdp@description=\count275
 )
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.sty
 (C:\Program Files\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
@@ -743,15 +752,15 @@ Package: expl3 2021-02-18 L3 programming layer (loader)
 
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count275
-\l__pdf_internal_box=\box51
+\l__color_backend_stack_int=\count276
+\l__pdf_internal_box=\box53
 ))
 Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count276
-\l__lipsum_a_int=\count277
-\l__lipsum_b_int=\count278
+\g__lipsum_par_int=\count277
+\l__lipsum_a_int=\count278
+\l__lipsum_b_int=\count279
 
 LaTeX3 Info: Defining command \LipsumPar with sig. 'm' on line 175.
 
@@ -835,15 +844,15 @@ LaTeX3 Info: Defining command \setlipsum with sig. '+m' on line 357.
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex))
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/subfig\subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count279
+\c@KVtest=\count280
 \sf@farskip=\skip104
 \sf@captopadj=\dimen172
 \sf@capskip=\skip105
 \sf@nearskip=\skip106
-\c@subfigure=\count280
-\c@subfigure@save=\count281
-\c@subtable=\count282
-\c@subtable@save=\count283
+\c@subfigure=\count281
+\c@subfigure@save=\count282
+\c@subtable=\count283
+\c@subtable@save=\count284
 \sf@top=\skip107
 \sf@bottom=\skip108
 )
@@ -857,7 +866,7 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks21
+\@emptytoks=\toks23
 \ex@=\dimen173
 ))
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
@@ -867,41 +876,41 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count284
+\inf@bad=\count285
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count285
-\leftroot@=\count286
+\uproot@=\count286
+\leftroot@=\count287
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count287
-\DOTSCASE@=\count288
+\classnum@=\count288
+\DOTSCASE@=\count289
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box52
-\strutbox@=\box53
+\Mathstrutbox@=\box54
+\strutbox@=\box55
 \big@size=\dimen175
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count289
-\c@MaxMatrixCols=\count290
+\macc@depth=\count290
+\c@MaxMatrixCols=\count291
 \dotsspace@=\muskip17
-\c@parentequation=\count291
-\dspbrk@lvl=\count292
-\tag@help=\toks22
-\row@=\count293
-\column@=\count294
-\maxfields@=\count295
-\andhelp@=\toks23
+\c@parentequation=\count292
+\dspbrk@lvl=\count293
+\tag@help=\toks24
+\row@=\count294
+\column@=\count295
+\maxfields@=\count296
+\andhelp@=\toks25
 \eqnshift@=\dimen176
 \alignsep@=\dimen177
 \tagshift@=\dimen178
 \tagwidth@=\dimen179
 \totwidth@=\dimen180
 \lineht@=\dimen181
-\@envbody=\toks24
+\@envbody=\toks26
 \multlinegap=\skip110
 \multlinetaggap=\skip111
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
@@ -918,15 +927,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks26
-\thm@bodyfont=\toks27
-\thm@headfont=\toks28
-\thm@notefont=\toks29
-\thm@headpunct=\toks30
+\thm@style=\toks28
+\thm@bodyfont=\toks29
+\thm@headfont=\toks30
+\thm@notefont=\toks31
+\thm@headpunct=\toks32
 \thm@preskip=\skip112
 \thm@postskip=\skip113
 \thm@headsep=\skip114
-\dth@everypar=\toks31
+\dth@everypar=\toks33
 )
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/xpatch\xpatch.sty
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
@@ -936,16 +945,16 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse-generic.tex)))
 (C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count296
+\etb@tempcnta=\count297
 ))
 Class scrartcl Info: amsthm's \deferred@thm@head patched.
 
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/latex-tools\varioref.sty
 Package: varioref 2020/08/11 v1.6e package for extended references (FMi)
-\c@vrcnt=\count297
+\c@vrcnt=\count298
 )
-\c@definition=\count298
-\c@theorem=\count299
+\c@definition=\count299
+\c@theorem=\count300
 Package hyperref Info: Option `colorlinks' set `true' on input line 74.
 Package hyperref Info: Option `breaklinks' set `true' on input line 74.
 
@@ -980,17 +989,17 @@ Package scrbase Info: activating english \listfigurename on input line 49.
 Package scrbase Info: activating english \listtablename on input line 49.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count300
+\scratchcounter=\count301
 \scratchdimen=\dimen182
-\scratchbox=\box54
-\nofMPsegments=\count301
-\nofMParguments=\count302
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count303
+\scratchbox=\box56
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count304
 \MPscratchDim=\dimen183
-\MPnumerator=\count304
-\makeMPintoPDFobject=\count305
-\everyMPtoPDFconversion=\toks33
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks35
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1027,7 +1036,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 g.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count306
+\c@section@level=\count307
 LaTeX Info: Redefining \Ref on input line 520.
 )
 LaTeX Info: Redefining \ref on input line 49.
@@ -1052,7 +1061,7 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (C:\Users\Ruben\AppData\Roaming\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count307
+\BKM@id=\count308
 ))
 LaTeX Font Info:    Trying to load font information for T1+iwona on input line 
 66.
@@ -1129,39 +1138,66 @@ Package microtype Info: Character `029' is missing
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/m/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (0.58981pt too wide) in paragraph at lines 94--96
+\T1/pplj/m/n/10 Lo scopo del pro-getto con-siste nella re-al-iz-zazione di un d
+atabase a grafo riguardante
+ []
+
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- [2]
+[2]
 Overfull \hbox (0.62979pt too wide) in paragraph at lines 136--137
 []\T1/pplj/m/n/10 Il note-book in-oltre sal-vava al-cuni para-grafi della bi-og
 rafia più volte, per questo
  []
 
+<plot_relazioni.png, id=55, 702.625pt x 451.6875pt>
+File: plot_relazioni.png Graphic file (type png)
+<use plot_relazioni.png>
+Package pdftex.def Info: plot_relazioni.png  used on input line 147.
+(pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
+[3]
+<plot_corrispondenza_personaggi.png, id=70, 702.625pt x 451.6875pt>
+File: plot_corrispondenza_personaggi.png Graphic file (type png)
+<use plot_corrispondenza_personaggi.png>
+Package pdftex.def Info: plot_corrispondenza_personaggi.png  used on input line
+ 155.
+(pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
+<plot_descrizione_fumetti.png, id=71, 702.625pt x 451.6875pt>
+File: plot_descrizione_fumetti.png Graphic file (type png)
+<use plot_descrizione_fumetti.png>
+Package pdftex.def Info: plot_descrizione_fumetti.png  used on input line 161.
+(pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
+ [4 <./plot_relazioni.png> <./plot_corrispondenza_personaggi.png>]
 No file article_4.bbl.
-[3] (article_4.aux)
+[5 <./plot_descrizione_fumetti.png>] (article_4.aux)
 Package rerunfilecheck Info: File `article_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19662 strings out of 479321
- 357622 string characters out of 2866502
- 940484 words of memory out of 3000000
- 36757 multiletter control sequences out of 15000+600000
- 482215 words of font info for 103 fonts, out of 8000000 for 9000
+ 19762 strings out of 479321
+ 359294 string characters out of 2866502
+ 941656 words of memory out of 3000000
+ 36832 multiletter control sequences out of 15000+600000
+ 488833 words of font info for 108 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 111i,22n,116p,10606b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:
-/Users/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/P
-rogram Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Ruben/AppData/Roaming
-/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/Ruben/AppData/Roaming/MiKT
-eX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX/
-fonts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX/fo
-nts/type1/nowacki/iwona/iwonar.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/pal
-atino/uplr8a.pfb>
-Output written on article_4.pdf (3 pages, 111400 bytes).
+ 111i,22n,116p,10624b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{section.6} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Users/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/U
+sers/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Pro
+gram Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/Ruben/AppData/Roaming/M
+iKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX
+/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX/fo
+nts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX/font
+s/type1/nowacki/iwona/iwonar.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/palat
+ino/uplr8a.pfb>
+Output written on article_4.pdf (5 pages, 141401 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
- 17489 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 18560 words of extra memory for PDF output out of 20736 (max. 10000000)
 
