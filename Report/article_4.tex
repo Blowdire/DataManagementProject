@@ -162,7 +162,22 @@ Le analisi di completezza effettuate sulle descrizioni dei fumetti, ottenute tra
   \caption{Grafico relativo al numero di fumetti con e senza descrizione}
 \end{figure}
 \section{Data Integration}
+Per il processo di Data Integration sono state collegate dove possibile le due sorgeti dati tramite gli schemi dei personaggi, i quali fungono da punto di incontro fra le due sorgenti dati
+\subsection{Schema transformation}
+Per la fase di schema transformation si aggiunge una nuova colonna al dataset del web scraping e della web api, contenente il nome del personaggio senza alcuni caratteri particolari come ad esempio " o ' e senza qualsiasi porzione di testo racchiusa fra delle parentesi. Le parentesi sono tolte per poter fare il matching dei personaggi senza tenere conto in questo caso della singola variante del personaggio(ad esempio stesso personaggio di universi differenti). In output si avranno i due schemi relativi ai personaggi con un campo nome processato come detto precedentemente.
 \subsection{Schema matching}
+La fase di schema matching avviene durante il processo di inserimento nel database a grafo, utilizzando la seguente regola di integrazione:
+\begin{enumerate}
+	\item Per ogni personaggio, sia proveniente da scraping che da web api, creo, se non esiste, un nodo <<character>> all'interno del database a grafo, utilizzando come discriminante sull'esistenza il nome processato generato nella fase di schema transformation. Se il nodo esiste già non faccio nulla.
+	\item Per ogni personaggio collego il nodo character corrispondente al nome processato ad un nodo <<character variant>>, che sara creato se non esiste, che è identificato tramite il nome vero e proprio non processato. Se il nodo esiste già procedo aggiungendo le informazioni aggiuntive relative al personaggio. 	
+\end{enumerate}
+\subsection{Schemas Integration}
+Infine, definita la regola di schema matching il notebook procede come segue:
+\begin{enumerate}
+	\item Per ogni personaggio della web api eseguo la creazione dei nodi come definito precedentemente
+	\item Per ogni personaggio ottenuto tramite web scraping eseguo la creazione dei nodi come definito precedentemente
+	\item Eseguite queste operazioni vengono integrate le informazioni ottenute tramite web scraping alle informazioni già inserite sul database provenienti dalla web api se possibile, sennò vengono creati i nodi corrispondenti ai singoli personaggi in caso di corrispondenza fra i nomi non trovata.
+\end{enumerate}
 \section{Database}
 \subsection{Struttura Database}
 \subsection{Nodi Database}

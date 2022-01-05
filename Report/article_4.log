@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.4)  5 JAN 2022 11:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.4)  5 JAN 2022 12:06
 entering extended mode
 **./article_4.tex
 (article_4.tex
@@ -1153,39 +1153,40 @@ Overfull \hbox (0.62979pt too wide) in paragraph at lines 136--137
 rafia più volte, per questo
  []
 
-<plot_relazioni.png, id=55, 702.625pt x 451.6875pt>
+<plot_relazioni.png, id=61, 702.625pt x 451.6875pt>
 File: plot_relazioni.png Graphic file (type png)
 <use plot_relazioni.png>
 Package pdftex.def Info: plot_relazioni.png  used on input line 147.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
 [3]
-<plot_corrispondenza_personaggi.png, id=70, 702.625pt x 451.6875pt>
+<plot_corrispondenza_personaggi.png, id=76, 702.625pt x 451.6875pt>
 File: plot_corrispondenza_personaggi.png Graphic file (type png)
 <use plot_corrispondenza_personaggi.png>
 Package pdftex.def Info: plot_corrispondenza_personaggi.png  used on input line
  155.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
-<plot_descrizione_fumetti.png, id=71, 702.625pt x 451.6875pt>
+<plot_descrizione_fumetti.png, id=77, 702.625pt x 451.6875pt>
 File: plot_descrizione_fumetti.png Graphic file (type png)
 <use plot_descrizione_fumetti.png>
 Package pdftex.def Info: plot_descrizione_fumetti.png  used on input line 161.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
- [4 <./plot_relazioni.png> <./plot_corrispondenza_personaggi.png>]
+ [4 <./plot_relazioni.png> <./plot_corrispondenza_personaggi.png>] [5 <./plot_d
+escrizione_fumetti.png>]
 No file article_4.bbl.
-[5 <./plot_descrizione_fumetti.png>] (article_4.aux)
+[6] (article_4.aux)
 Package rerunfilecheck Info: File `article_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19762 strings out of 479321
- 359294 string characters out of 2866502
+ 19773 strings out of 479321
+ 359393 string characters out of 2866502
  941656 words of memory out of 3000000
- 36832 multiletter control sequences out of 15000+600000
+ 36835 multiletter control sequences out of 15000+600000
  488833 words of font info for 108 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 111i,22n,116p,10624b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist
-, replaced by a fixed one
+ 111i,22n,116p,10624b,650s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsection.4.4} has been referenced but does not 
+exist, replaced by a fixed one
 
 {C:/Users/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona.enc}{C:/U
 sers/Ruben/AppData/Roaming/MiKTeX/fonts/enc/dvips/iwona/ec-iwona-sc.enc}{C:/Pro
@@ -1195,9 +1196,9 @@ iKTeX/fonts/type1/public/fpl/fplrc8a.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX
 nts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/Ruben/AppData/Roaming/MiKTeX/font
 s/type1/nowacki/iwona/iwonar.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/palat
 ino/uplr8a.pfb>
-Output written on article_4.pdf (5 pages, 141401 bytes).
+Output written on article_4.pdf (6 pages, 146852 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 18560 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 187 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 18576 words of extra memory for PDF output out of 20736 (max. 10000000)
 

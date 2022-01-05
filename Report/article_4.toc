@@ -10,10 +10,12 @@
 \contentsline {subsubsection}{\numberline {3.2.1}{Dati personaggi}}{4}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}{Descrizione fumetti}}{5}{subsubsection.3.2.2}%
 \contentsline {section}{\numberline {4}{Data Integration}}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}{Schema matching}}{5}{subsection.4.1}%
-\contentsline {section}{\numberline {5}{Database}}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}{Struttura Database}}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}{Nodi Database}}{5}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}{Relazioni database}}{5}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}{Statistiche database}}{5}{subsection.5.4}%
+\contentsline {subsection}{\numberline {4.1}{Schema transformation}}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}{Schema matching}}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}{Schemas Integration}}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}{Database}}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}{Struttura Database}}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}{Nodi Database}}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}{Relazioni database}}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}{Statistiche database}}{6}{subsection.5.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
