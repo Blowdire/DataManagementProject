@@ -20,7 +20,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-10pt, % Main document font size
+12pt, % Main document font size
 a4paper, % Paper type, use 'letterpaper' for US Letter paper
 oneside, % One page layout (no page indentation)
 %twoside, % Two page layout (page indentation for binding and different headers)
@@ -43,7 +43,7 @@ BCOR5mm, % Binding correction
 \author{\spacedlowsmallcaps{Fabrizio Cominetti, Davide Abete, Ruben Agazzi}} % The article author(s) - author affiliations need to be specified in the AUTHOR AFFILIATIONS block
 
 \date{} % An optional date to appear under the author(s)
-
+\usepackage{hyperref}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -120,9 +120,9 @@ L'ottenimento dei dati è avvenuto tramite esecuzione di un notebook python.
 L'esecuzione consiste nei seguenti passi:
 \begin{enumerate}
 \item Ottenimento dei dati dei personaggi in formato JSON tramite chiamata al relativo endpoint della web api a gruppi di 100 personaggi, in quanto è il limite imposto dagli sviluppatori del servizio.
-\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti.
+\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti, in modo da eseguire successive manipolazioni facilmente tramite la libreria \textit{pandas}, prima di inserire i dati nel database.
 \item Ottenimento dei dati dei fumetti in formato JSON tramite chiamata al relativo endpoint della web api a gruppi di 100 fumetti, in quanto è il limite imposto dagli sviluppatori del servizio.
-\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti.
+\item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti , in modo da eseguire successive manipolazioni facilmente tramite la libreria \textit{pandas}, prima di inserire i dati nel database..
 \end{enumerate}
 \section{Data Exploration}
 La fase di data exploration è stata realizzata sempre utilizzando python con alcune librerie grafiche per la creazione di visualizzazioni.
@@ -162,27 +162,117 @@ Le analisi di completezza effettuate sulle descrizioni dei fumetti, ottenute tra
   \caption{Grafico relativo al numero di fumetti con e senza descrizione}
 \end{figure}
 \section{Data Integration}
-Per il processo di Data Integration sono state collegate dove possibile le due sorgeti dati tramite gli schemi dei personaggi, i quali fungono da punto di incontro fra le due sorgenti dati
+Per il processo di Data Integration sono state collegate dove possibile le due sorgeti dati tramite gli schemi dei personaggi, i quali fungono da punto di incontro fra le due sorgenti dati. è stata realizzata un operazione di record linkage fra i dati dei personaggi
+\subsection{Data preparation}
+Prima di tutto si aggiunge una nuova colonna al dataset del web scraping e della web api, contenente il nome del personaggio senza alcuni caratteri particolari come ad esempio " o ' e senza qualsiasi porzione di testo racchiusa fra delle parentesi. Queste operazioni sono state effettuate tramite l'utilizzo della libreria python "re" per pulire le stringhe. Le parentesi sono tolte per poter fare il confronto dei personaggi senza tenere conto in questo caso della singola variante del personaggio(ad esempio stesso personaggio di universi differenti). In output si avranno i due schemi relativi ai personaggi con un campo nome processato come detto precedentemente.
 \subsection{Schema transformation}
-Per la fase di schema transformation si aggiunge una nuova colonna al dataset del web scraping e della web api, contenente il nome del personaggio senza alcuni caratteri particolari come ad esempio " o ' e senza qualsiasi porzione di testo racchiusa fra delle parentesi. Le parentesi sono tolte per poter fare il matching dei personaggi senza tenere conto in questo caso della singola variante del personaggio(ad esempio stesso personaggio di universi differenti). In output si avranno i due schemi relativi ai personaggi con un campo nome processato come detto precedentemente.
-\subsection{Schema matching}
-La fase di schema matching avviene durante il processo di inserimento nel database a grafo, utilizzando la seguente regola di integrazione:
+Durante la fase di schema matching è stato effettuato un processo di reverse Engineering per capire cosa rappresentassero i dati della web api, non è stato fatto per lo scraping in quanto abbiamo scelto noi quali dati prendere e quindi lo schema era già chiaro a priori
+L'analisi dello schema relativo ai personaggi è così composto:
+
 \begin{enumerate}
-	\item Per ogni personaggio, sia proveniente da scraping che da web api, creo, se non esiste, un nodo <<character>> all'interno del database a grafo, utilizzando come discriminante sull'esistenza il nome processato generato nella fase di schema transformation. Se il nodo esiste già non faccio nulla.
-	\item Per ogni personaggio collego il nodo character corrispondente al nome processato ad un nodo <<character variant>>, che sara creato se non esiste, che è identificato tramite il nome vero e proprio non processato. Se il nodo esiste già procedo aggiungendo le informazioni aggiuntive relative al personaggio. 	
+	\item Id: identificativo univoco assegnato dall'api ad ogni personaggio
+	\item description: Breve descrizione del personaggio
+	\item modified: ultima modifica apportata al personaggio
+	\item thumbnail: url che porta ad un immagine del personaggio
+	\item comics: lista di fumetti in cui il personaggio è presente, con relativo id fumetto
+	\item series: lista di serie di fumetti in cui il personaggio è presente
+	\item stories: lista di storie in cui il personaggio è presente
+	\item events: lista di eventi in cui ha partecipato il personaggio
+	
 \end{enumerate}
+
+L'analisi dello schema relativo ai fumetti ottenuti tramite web api ha permesso di identificare i seguenti attributi:
+\begin{enumerate}
+	\item Id: identificativo univoco relativo al fumetto
+	\item title: titolo del fumetto
+	\item description: breve descrizione del fumetto
+	\item modified: ultima modifica dei dati relativi al fumetto
+	\item isbn, upc, diamondCode, ean, issn: identificativi editoriali relativi al fumetto
+	\item forma: Formato di stampa del fumetto
+	\item pageCount: numero di pagine del fumetto
+	\item series: lista delle serie a cui appartiene il fumetto
+	\item thumbnail: url relativa ad un immagine della copertina del fumetto
+	\item images: url relativi a varie immagini del fumetto
+	\item creators: lista dei creatori del fumetto
+	\item characters: lista di personaggi appartenenti al fumetto
+	\item stories: lista di storie appartenenti al fumetto
+	\item events: lista di eventi significativi presenti nel fumetto
+\end{enumerate}
+%\begin{enumerate}
+%\item Per ogni personaggio, sia proveniente da scraping che da web api, creo, se non esiste, un nodo <<character>> all'interno del database a grafo, utilizzando come discriminante sull'esistenza il nome processato generato nella fase di schema transformation. Se il nodo esiste già non faccio nulla.
+%	\item Per ogni personaggio collego il nodo character corrispondente al nome processato ad un nodo <<character variant>>, che sara creato se non esiste, che è identificato tramite il nome vero e proprio non processato. Se il nodo esiste già procedo aggiungendo le informazioni aggiuntive relative al personaggio. 	
+%\end{enumerate}
+\subsection{Corrispondences Investigation}
+Durante la fase di \textit{Corrispondences Investigation}, si è notato che si possono unire le due basi di dati sulla base dei personaggi, più specificatamente è possibile stabilire un collegamento fra i personaggi sulla base del loro nome. Dopo varie analisi si è notato che sia nel caso della base di dati ottenuta tramite consultazione della web api sia di quella ottenuta tramite web scraping, che un personaggio è identificato tramite un nome privo di parentesi e un'eventuale variante del personaggio è identificata da un nome all'interno della parentesi. Alla luce di queste considerazioni una regola di confronto fra i due schemi consiste nel vedere se due nomi di personaggi sono uguali dopo aver rimosso parentesi ed eventuali testi all'interno delle parentesi.
 \subsection{Schemas Integration}
-Infine, definita la regola di schema matching il notebook procede come segue:
-\begin{enumerate}
-	\item Per ogni personaggio della web api eseguo la creazione dei nodi come definito precedentemente
-	\item Per ogni personaggio ottenuto tramite web scraping eseguo la creazione dei nodi come definito precedentemente
-	\item Eseguite queste operazioni vengono integrate le informazioni ottenute tramite web scraping alle informazioni già inserite sul database provenienti dalla web api se possibile, sennò vengono creati i nodi corrispondenti ai singoli personaggi in caso di corrispondenza fra i nomi non trovata.
-\end{enumerate}
+La fase di schemas integration avviene durante l'inserimento dei dati nel database: per ogni record presenti nei due schemi relativi ai personaggi vengono rimosse le porzioni di stringa contenute all'interno di parentesi tramite l'utilizzo della libreria \textit{re}; in seguito viene creato all'interno del database un nodo di tipo \textit{character} se non è già presente un nodo dello stesso tipo con lo stesso nome. Al nodo character, sia che è stato creato oppure no, viene collegato un nodo \textit{Character Variant} identificato tramite nome completo, ovvero il nome prima della rimozione delle parentesi, contenente tutte le informazioni presenti nel record personaggio in esame. Ovviamente anche il nodo \textit{Character Variant} viene creato solo se non esiste già, mentre se esiste vengono solo aggiunte informazioni mancanti presenti nella base di dati da cui proviene il personaggio in esame.
 \section{Database}
+Il database scelto per lo starage dei dati è un database a grafo. i motivi che hanno portato a questa scelta sono:
+\begin{enumerate}
+	\item Dati non in real time: la mole di dati riguardante l'universo marvel non è enorme e non necessita di un inserimento di dati real time, quindi le operazioni di scrittura sono relativamente poche e le operazioni in lettura sono molte di più; proprio per questo un database a grafo può essere utilizzato in quanto lento in scrittura ma veloce in lettura.
+	\item Lo scopo del dataset è mostrare le varie relazioni fra i prodotti marvel e quindi un database a grafo è l'ideale, in quanto è basato sul concetto di relazioni e collegamenti
+\end{enumerate}
 \subsection{Struttura Database}
-\subsection{Nodi Database}
-\subsection{Relazioni database}
+La struttura del database è la seguente:
+\subsubsection{Nodi}
+I nodi presenti all'interno del database sono:
+\begin{enumerate}
+	\item Comic: nodo rappresentante un fumetto Marvel, con al suo interno il suo id fumetto ottenuto dall'api, i vari codici di identificazione,come ad esempio ISBN, la descrizione del fumetto se è presente, il formato del fumetto e il numero di pagine.
+	\item Movie: nodo rappresentante un film Marvel, con al suo interno i vari dati relativi al film come ad esempio la trama del film, i registi, scrittori, produttori, compositori, incassi, durata del film, e data di rilascio del film
+	\item Tv Show: nodo rappresentante una serie tv Marvel, con al suo interno i vari dati relativi al film come ad esempio la trama della prima stagione, i registi, gli showrunner, produttori, compositori.
+	\item Character: nodo rappresentante la versione generica di un personaggio, contiene al suo interno il nome del personaggio
+	\item Character Variant: Nodo che rappresenta una variante precisa di un personaggio, contenente informazioni come ad esempio il nome, una descrizione del personaggio e una biografia del personaggio.
+\end{enumerate}
+\subsubsection{Relazioni}
+Le relazioni presenti fra i nodi all'interno del database sono:
+\begin{enumerate}
+	\item In Film: relazione che collega un nodo <<Character Variant>> ad un nodo film, rappresenta appunto la partecipazione del personaggio all'interno del film
+	\item In Serie: relazione che collega un nodo <<Character Variant>> ad un nodo ts show, rappresenta la partecipazione del personaggio all'interno di una serie tv.
+	\item In fumetto: relazione che collega un nodo <<Character Variant>> ad un nodo <<Comic>>, rappresenta la partecipazione del personaggio all'interno di un fumetto.
+	\item Conosce: relazione che collega un nodo <<Character Variant>> ad un nodo <<Character Variant>>, rappresenta una relazione inter-personale fra due personaggi.
+	\item <<Variante di>>: relazione che rappresenta una variante di un personaggio base, collega un nodo di tipo <<character>> ad un nodo di tipo <<character variant>>.
+\end{enumerate}
+
 \subsection{Statistiche database}
+All'interno del database sono stati creati in totale $60411$ nodi distribuiti nel seguente modo: 
+
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Etichetta Nodo  & Numero Di Nodi \\ [0.5ex] 
+ \hline\hline
+	
+	Character & 4609 \\ \hline 
+	Character Variant & 5113 \\ \hline
+	Comic & 50607 \\ \hline
+	Movie & 43 \\ \hline
+	Tv Show & 19 \\ [0.5ex] \hline 
+\end{tabular}
+\end{center}
+Fra i nodi del database sono state create $117763$ relazioni distribuite nel modo seguente
+\begin{center}
+\begin{tabular}{||c c||} 
+ \hline
+ Etichetta Relazione  & Numero Di Relazioni \\ [0.5ex] 
+ \hline\hline
+	Conosce & 19040 \\ \hline 
+	In Film & 531 \\ \hline
+	In Serie & 2405 \\ \hline
+	In Fumetto & 90503 \\ \hline
+	Variante di & 5284 \\ [0.5ex] \hline 
+\end{tabular}
+\end{center}
+\begin{figure}[H]
+  \includegraphics[scale=0.27]{./Figures/comic-variant.png}
+  \caption{Visualizzazione di alcuni nodi Character variant(Viola) in relazione a dei nodi Comic(Arancione)}
+\end{figure}
+\subsection{Alcune Query}
+ Grazie alla struttura a grafo del database è possibile ottenere 
+ facilmente tramite query relazioni fra i nodi. Ad esempio potremmo 
+ trovare i personaggi conosciuti dal personaggio "Iron Man",
+  che sono presenti nel film \textit{Avengers}. 
+	Per ottenere questo risultato si può utilizzare la seguente query 
+	CYPHER: \\\newline \textit{MATCH (i:character\_variant)-[r:conosce]->(c:character\_variant)-[p:in\_film]\\->(m:movie) WHERE i.name = "Iron Man"  AND m.title = "The Avengers" RETURN i,r,c,p,m} 
 
 %----------------------------------------------------------------------------------------
 %	RESULTS AND DISCUSSION
