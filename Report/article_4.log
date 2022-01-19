@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.18)  18 JAN 2022 16:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.18)  19 JAN 2022 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1048,72 +1048,65 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 
-LaTeX Warning: Citation `BigDataBook' on page 2 undefined on input line 118.
+LaTeX Warning: Citation `BigDataBook' on page 2 undefined on input line 116.
 
-
-LaTeX Warning: Citation `Figueredo:2009dg' on page 2 undefined on input line 11
-8.
-
-
-Overfull \hbox (0.50798pt too wide) in paragraph at lines 114--122
-\T1/pplj/m/n/12 garan-tire la co-mu-ni-cazione tra due soft-ware. Per-me-t-tono
- di richiedere
- []
-
-[2]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/iwona/b/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [3]
-Overfull \hbox (6.51198pt too wide) in paragraph at lines 146--147
+[2]
+
+LaTeX Warning: Citation `linkFandom' on page 3 undefined on input line 132.
+
+[3]
+Overfull \hbox (6.51198pt too wide) in paragraph at lines 144--145
 \T1/pplj/m/n/12 La fase di data ex-plo-ration è stata re-al-iz-zata sem-pre uti
 -liz-zando python,
  []
 
 
-Overfull \hbox (29.29863pt too wide) in paragraph at lines 155--156
+Overfull \hbox (29.29863pt too wide) in paragraph at lines 153--154
 \T1/pplj/m/n/12 em-pio il carat-tere "o", in modo da non avere prob-lemi nell'i
 nserimento
  []
 
 [4]
-Overfull \hbox (4.5906pt too wide) in paragraph at lines 162--163
+Overfull \hbox (4.5906pt too wide) in paragraph at lines 160--161
 []\T1/pplj/m/n/12 Per ogni re-lazione ot-tenuta viene ef-fet-tuato un con-troll
 o sul nome
  []
 
 
-Overfull \hbox (20.13066pt too wide) in paragraph at lines 162--163
+Overfull \hbox (20.13066pt too wide) in paragraph at lines 160--161
 \T1/pplj/m/n/12 del per-son-ag-gio della re-lazione, se il nome non è pre-sente
  all'interno
  []
 
-<plot_relazioni.png, id=77, 702.625pt x 451.6875pt>
+<plot_relazioni.png, id=78, 702.625pt x 451.6875pt>
 File: plot_relazioni.png Graphic file (type png)
 <use plot_relazioni.png>
-Package pdftex.def Info: plot_relazioni.png  used on input line 165.
+Package pdftex.def Info: plot_relazioni.png  used on input line 163.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
-<plot_corrispondenza_personaggi.png, id=79, 702.625pt x 451.6875pt>
+<plot_corrispondenza_personaggi.png, id=80, 702.625pt x 451.6875pt>
 File: plot_corrispondenza_personaggi.png Graphic file (type png)
 <use plot_corrispondenza_personaggi.png>
 Package pdftex.def Info: plot_corrispondenza_personaggi.png  used on input line
- 173.
+ 171.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
 [5 <./plot_relazioni.png>]
 <plot_descrizione_fumetti.png, id=90, 702.625pt x 451.6875pt>
 File: plot_descrizione_fumetti.png Graphic file (type png)
 <use plot_descrizione_fumetti.png>
-Package pdftex.def Info: plot_descrizione_fumetti.png  used on input line 179.
+Package pdftex.def Info: plot_descrizione_fumetti.png  used on input line 177.
 (pdftex.def)             Requested size: 351.31163pt x 225.84319pt.
 
-Overfull \hbox (27.18794pt too wide) in paragraph at lines 177--181
+Overfull \hbox (27.18794pt too wide) in paragraph at lines 175--179
 \T1/pplj/m/n/12 tenute tramite web API, con-sistono nel ver-i-fi-care quanti fu
 metti possiedono
  []
 
 [6 <./plot_corrispondenza_personaggi.png> <./plot_descrizione_fumetti.png>]
 [7] [8]
-Overfull \hbox (6.87071pt too wide) in paragraph at lines 231--232
+Overfull \hbox (6.87071pt too wide) in paragraph at lines 229--230
 []\T1/pplj/m/n/12 Lo scopo del database è di mostrare le varie re-lazioni fra i
  prodotti
  []
@@ -1122,30 +1115,46 @@ Overfull \hbox (6.87071pt too wide) in paragraph at lines 231--232
 <./Figures/comic-variant.png, id=153, 1879.02pt x 1000.73875pt>
 File: ./Figures/comic-variant.png Graphic file (type png)
 <use ./Figures/comic-variant.png>
-Package pdftex.def Info: ./Figures/comic-variant.png  used on input line 284.
+Package pdftex.def Info: ./Figures/comic-variant.png  used on input line 282.
 (pdftex.def)             Requested size: 507.3422pt x 270.20308pt.
 
-Overfull \hbox (137.3422pt too wide) in paragraph at lines 284--285
+Overfull \hbox (137.3422pt too wide) in paragraph at lines 282--283
 [][] 
  []
 
+<./Figures/query_1.png, id=154, 704.6325pt x 305.14pt>
+File: ./Figures/query_1.png Graphic file (type png)
+<use ./Figures/query_1.png>
+Package pdftex.def Info: ./Figures/query_1.png  used on input line 291.
+(pdftex.def)             Requested size: 352.3154pt x 152.56961pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--294
+Underfull \hbox (badness 10000) in paragraph at lines 286--293
 
  []
 
 
-Overfull \hbox (1.60313pt too wide) in paragraph at lines 289--294
+Overfull \hbox (1.60313pt too wide) in paragraph at lines 286--293
 \T1/pplj/m/it/12 MATCH (i:character_variant)-[r:conosce]->(c:character_variant)
 -[p:in_film] 
  []
 
-[11 <./Figures/comic-variant.png>] (article_4.bbl
+[11 <./Figures/comic-variant.png>]
+<./Figures/query_2.png, id=162, 702.625pt x 704.6325pt>
+File: ./Figures/query_2.png Graphic file (type png)
+<use ./Figures/query_2.png>
+Package pdftex.def Info: ./Figures/query_2.png  used on input line 298.
+(pdftex.def)             Requested size: 351.31163pt x 352.3154pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--300
+
+ []
+
+[12 <./Figures/query_1.png>] [13 <./Figures/query_2.png>] (article_4.bbl
 
 LaTeX Warning: Empty `thebibliography' environment or \BreakBibliography
                before end of `thebibliography' environment on input line 3.
 
-) [12] (article_4.aux)
+) [14] (article_4.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1153,28 +1162,30 @@ Package rerunfilecheck Info: File `article_4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 21087 strings out of 478659
- 402951 string characters out of 2844498
+ 21177 strings out of 478659
+ 404733 string characters out of 2844498
  953680 words of memory out of 3000000
- 38719 multiletter control sequences out of 15000+600000
- 504029 words of font info for 149 fonts, out of 8000000 for 9000
+ 38789 multiletter control sequences out of 15000+600000
+ 508664 words of font info for 163 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  108i,22n,106p,10624b,686s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwo
-na.enc}{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/e
-c-iwona-sc.enc}{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
-/base/8r.enc}<C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-iwona
+.enc}{C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/iwona/ec-
+iwona-sc.enc}<C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/euler/eurm10.pfb><C:/Users/GRMITALY/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/fpl/fplrc8a.pfb><C:/Users/GRMITALY/AppData/Local/Programs/MiKT
-eX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/GRMITALY/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/GRMITALY/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/GRMITALY/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/GRMITALY
-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/GR
-MITALY/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on article_4.pdf (12 pages, 1102326 bytes).
+eX/fonts/type1/public/fpl/fplrij8a.pfb><C:/Users/GRMITALY/AppData/Local/Program
+s/MiKTeX/fonts/type1/nowacki/iwona/iwonab.pfb><C:/Users/GRMITALY/AppData/Local/
+Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonabi.pfb><C:/Users/GRMITALY/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/nowacki/iwona/iwonar.pfb><C:/Users/GRMITALY
+/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/GR
+MITALY/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Us
+ers/GRMITALY/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb
+>
+Output written on article_4.pdf (14 pages, 1420574 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 30877 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 92 named destinations out of 1000 (max. 500000)
+ 38055 words of extra memory for PDF output out of 42996 (max. 10000000)
 

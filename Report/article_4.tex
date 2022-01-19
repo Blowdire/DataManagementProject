@@ -113,8 +113,6 @@ authorization and access control, e molte altre.
 \section{Fonti dati}
 Per l'ottenimento dei dati sono stati utilizzati due metodi diversi: l'utilizzo di una Web API e Web Scraping.
 % breve descrizione API e web scraping
-Le web API (Application Programming Interface) sono interfacce standardizzate e sicure per garantire la comunicazione
-tra due software. Permettono di richiedere dati ad un provider di terze parti per essere utilizzati. ???
 Le API, Application Programming Interface, sono protocolli utilizzati come interfaccia di comunicazione tra componenti software. Esse consistono in insiemi di routine, strutture dati o variabili che permettono al programmatore di richiamare le funzionalità di un’applicazione di terze parti. \cite{BigDataBook}
 % cit libro
 JSON (JavaScript Object Notation) è il formato con cui tipicamente le API rispondono. Questo formato è basato su due strutture: una collezione di coppie nomi/valore (objects) e una lista ordinata di valori (array). Spesso inoltre i file JSON hanno una struttura nidificata.
@@ -131,7 +129,7 @@ Di seguito riassumiamo i principali passi di esecuzione del notebook:
 \item Salvataggio su file CSV dei dati relativi ai fumetti ottenuti, in modo da eseguire successive manipolazioni facilmente tramite la libreria \textit{pandas}, prima di inserire i dati nel database.
 \end{enumerate}
 \subsection{Web Scraping}
-Per la parte riguardante il Web Scraping come sorgente dati è stata utilizzata la Marvel Cinematic Universe Wiki. %link?
+Per la parte riguardante il Web Scraping come sorgente dati è stata utilizzata la Marvel Cinematic Universe Wiki. \cite{linkFandom}
 Lo scraping è stato effettuato, anche in questo caso, tramite esecuzione di un jupyter notebook ed il linguaggio di programmazione python.
 I principali passi eseguiti dal notebook per completare lo scraping sono i seguenti:
 \begin{enumerate}
@@ -285,19 +283,31 @@ Fra i nodi del database sono state create $117763$ relazioni distribuite come di
   \caption{Visualizzazione di alcuni nodi Character variant (Viola) in relazione a dei nodi Comic (Arancione)}
 \end{figure}
 \subsection{Alcune Query}
-% aggiungi info, ad esempio su Cypher + altre query semplici per dimostrazione
- Grazie alla struttura a grafo del database è possibile ottenere 
- facilmente tramite query relazioni fra i nodi. Ad esempio, potremmo 
- trovare i personaggi conosciuti dal personaggio "Iron Man" e che sono presenti nel film \textit{Avengers}. 
+CQL, ovvero Cypher Query Language è il linguaggio di query per interrogare database a grafo, tra cui proprio Neo4j. Cypher è un linguaggio di tipo dichiarativo e pattern-matching, ed inoltre ha una sintassi simile ad SQL.
+Grazie alla struttura a grafo del database è possibile ottenere facilmente tramite query relazioni fra i nodi. Ad esempio, potremmo trovare i personaggi conosciuti dal personaggio "Iron Man" e che sono presenti nel film \textit{Avengers}. 
 	Per ottenere questo risultato si può utilizzare la seguente query 
-	CYPHER: \\\newline \textit{MATCH (i:character\_variant)-[r:conosce]->(c:character\_variant)-[p:in\_film]\\->(m:movie) WHERE i.name = "Iron Man"  AND m.title = "The Avengers" RETURN i,r,c,p,m} 
+	CYPHER: \\\newline \textit{MATCH (i:character\_variant)-[r:conosce]->(c:character\_variant)-[p:in\_film]\\->(m:movie) WHERE i.name = "Iron Man"  AND m.title = "The Avengers" RETURN i,r,c,p,m}
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{./Figures/query_1.png}
+  \caption{Output - Visualizzazione grafica della query}
+\end{figure}
+
+In questo secondo esempio invece visualizziamo alcuni fumetti in cui è presente il personaggio "Hulk".
+Per ottenere questo secondo risultato si può utilizzare invece la seguente query CYPHER: \\\newline \textit{MATCH (c:character\_variant)-[r:in\_fumetto]->(f:comic) WHERE c.name = "Hulk" RETURN c,f,r LIMIT 100}
+\begin{figure}[H]
+  \includegraphics[scale=0.5]{./Figures/query_2.png}
+  \caption{Output - Visualizzazione grafica della query}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 %	RESULTS AND DISCUSSION
 %----------------------------------------------------------------------------------------
 
 \section{Conclusione e sviluppi futuri}
-% aggiungi conclusione, miglioramenti possibili, limitazioni e sviluppi futuri
+In conclusione, abbiamo realizzato un database a grafo partendo dalle due fonti dati, API e web scraping, e successivamente integrato, su cui abbiamo poi svolto una verifica della qualità. Il database finale è completo delle varie relazioni tra personaggi, film e fumetti del mondo Marvel, inoltre ogni nodo contiene diverse informazioni in merito alla sua natura.
+Durante lo sviluppo del progetto, abbiamo riscontrato alcune limitazioni o problematiche: abbiamo constatato una lentezza in fase di scrittura del database a grafo, ciò però non risulta un problema limitante in caso di inserimento di pochi dati alla volta, in quanto le operazioni di scrittura sono poche rispetto a quelle di lettura. Inoltre, non tantissimi personaggi hanno un match tra le due fonti di dati, una soluzione potrebbe consistere nell'aggiungere una terza fonte di dati per riuscire ad integrare meglio i dati.
+Il database realizzato potrebbe essere utilizzato per implementare sistemi di raccomandazione, oppure per fornire una piattaforma interattiva per appassionati, che consenta loro di scoprire ed esplorare varie relazioni all'interno di questo mondo.
+Infine, il database potrebbe essere aggiornato ed ampliato con regolarità, in corrispondenza della produzione di nuovi film, serie tv e fumetti da parte della Marvel Entertainment.
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

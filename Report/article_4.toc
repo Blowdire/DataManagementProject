@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {3}{Data Exploration}}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}{Data Quality}}{4}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}{Data Quality e Cleaning Biografia}}{4}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}{Data Quality e Cleaning Relazioni}}{5}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}{Data Quality e Cleaning Relazioni}}{4}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}{Completezza}}{5}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}{Dati personaggi}}{5}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}{Descrizione fumetti}}{6}{subsubsection.3.2.2}%
@@ -20,5 +20,5 @@
 \contentsline {subsubsection}{\numberline {5.1.2}{Relazioni}}{10}{subsubsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.2}{Statistiche database}}{11}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}{Alcune Query}}{12}{subsection.5.3}%
-\contentsline {section}{\numberline {6}{Conclusione e sviluppi futuri}}{12}{section.6}%
+\contentsline {section}{\numberline {6}{Conclusione e sviluppi futuri}}{13}{section.6}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
