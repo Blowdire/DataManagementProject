@@ -36,7 +36,7 @@ BCOR5mm, % Binding correction
 %	TITLE AND AUTHOR(S)
 %----------------------------------------------------------------------------------------
 
-\title{\normalfont\spacedallcaps{Article Title}} % The article title
+\title{\normalfont\spacedallcaps{Marvel Graph Database}} % The article title
 
 %\subtitle{Subtitle} % Uncomment to display a subtitle
 
@@ -160,7 +160,7 @@ Per risolvere questo problema il notebook esegue le seguenti operazioni:
 	\item Per ogni relazione ottenuta viene effettuato un controllo sul nome del personaggio della relazione, se il nome non è presente all'interno della lista di personaggi la relazione viene scartata.
 \end{enumerate}
 \begin{figure}[H]
-  \includegraphics[scale=0.5]{plot_relazioni.png}
+  \includegraphics[scale=0.5]{./Figures/plot_relazioni.png}
   \caption{Grafico relativo alle relazioni tenute rispetto a quelle scartate}
 \end{figure}
 \subsection{Completezza}
@@ -168,13 +168,13 @@ Sono state effettuate altre analisi riguardanti la completezza dei dati, in part
 \subsubsection{Dati personaggi}
 Le analisi di completezza effettuate sui personaggi consistono nel confronto fra i dati ottenuti dalla web API e quelli ottenuti tramite web scraping. In particolare si può riscontrare una corrispondenza di 323 personaggi della web API con quelli ottenuti tramite web scraping, al netto dei 1559 personaggi della web API.
 \begin{figure}[H]
-  \includegraphics[scale=0.5]{plot_corrispondenza_personaggi.png}
+  \includegraphics[scale=0.5]{./Figures/plot_corrispondenza_personaggi.png}
   \caption{Grafico relativo al numero di personaggi che sono collegabili con i dati ottenuti tramite web scraping.}
 \end{figure}
 \subsubsection{Descrizione fumetti}
 Le analisi di completezza effettuate sulle descrizioni dei fumetti, ottenute tramite web API, consistono nel verificare quanti fumetti possiedono una descrizione. In particolare circa 19000 fumetti non hanno descrizione al netto dei circa 50000 fumetti presenti.
 \begin{figure}[H]
-  \includegraphics[scale=0.5]{plot_descrizione_fumetti.png}
+  \includegraphics[scale=0.5]{./Figures/plot_descrizione_fumetti.png}
   \caption{Grafico relativo al numero di fumetti con e senza descrizione.}
 \end{figure}
 \section{Data Integration}
@@ -313,11 +313,7 @@ Infine, il database potrebbe essere aggiornato ed ampliato con regolarità, in c
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\renewcommand{\refname}{\spacedlowsmallcaps{References}} % For modifying the bibliography heading
-
-\bibliographystyle{unsrt}
-
-\bibliography{sample.bib} % The file containing the bibliography
+\printbibliography %Prints bibliography
 
 %----------------------------------------------------------------------------------------
 
