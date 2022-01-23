@@ -1,0 +1,15 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'f:/universita/DataScience/Data Man/DataManagementProject/Report/main.blg'
+[204] biber-MSWIN64:340> INFO - === 
+[276] Biber.pm:415> INFO - Reading 'f:/universita/DataScience/Data Man/DataManagementProject/Report/main.bcf'
+[408] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[426] Biber.pm:4340> INFO - Processing section 0
+[448] Biber.pm:4531> INFO - Looking for bibtex format file 'sample.bib' for section 0
+[509] bibtex.pm:1689> INFO - LaTeX decoding ...
+[519] bibtex.pm:1494> INFO - Found BibTeX data source 'sample.bib'
+[632] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[633] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[633] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[634] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[661] bbl.pm:654> INFO - Writing 'f:/universita/DataScience/Data Man/DataManagementProject/Report/main.bbl' with encoding 'UTF-8'
+[662] bbl.pm:757> INFO - Output to f:/universita/DataScience/Data Man/DataManagementProject/Report/main.bbl
