@@ -28,6 +28,7 @@ headinclude,footinclude, % Extra spacing for the header and footer
 BCOR5mm, % Binding correction
 ]{scrartcl}
 \usepackage{float}
+\usepackage[italian]{babel}
 \input{structure.tex} % Include the structure.tex file which specified the document structure and layout
 
 \hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
@@ -72,11 +73,11 @@ BCOR5mm, % Binding correction
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
-
+\newpage
 \section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
 
 Il mondo Marvel è composto da numerosi fumetti, film e serie tv, in crescita numerica costante. Quest'ultimo è inoltre caratterizzato dalla presenza di un quantitativo enorme di personaggi.
-Il progetto realizzato si pone dunque l'obiettivo di creare una base di dati contenente le relazioni fra i vari prodotti Marvel. All'interno del database sono presenti relazioni come ad esempio fra personaggi e fumetti, personaggi e personaggi, e numerose altre. Per la realizzazione di questo progetto è stato scelto un database non relazionale di tipologia a grafo, costruito tramite l'utilizzo della piattaforma Neo4j.
+Il progetto realizzato si pone dunque l'obiettivo di creare una base di dati contenente le relazioni fra i vari prodotti Marvel. All'interno del database sono presenti relazioni come ad esempio fra personaggi e fumetti, personaggi e personaggi, e numerose altre. Per la realizzazione di questo progetto è stato scelto un database non relazionale di tipologia a grafo, costruito tramite l'utilizzo di Neo4j.
 
 %----------------------------------------------------------------------------------------
 %	AUTHOR AFFILIATIONS
@@ -96,11 +97,9 @@ Il progetto ha avuto origine dall'idea di realizzare un ampio database relativo 
 L'obiettivo del progetto è di ottenere una sorta di "rete sociale" di super-eroi o personaggi Marvel, i quali sono collegati ai rispettivi fumetti, film, serie tv in cui sono presenti, oppure ancora presentano i rispettivi collegamenti interpersonali fra personaggi ed altri personaggi.
 Per questi motivi la scelta in fase di costruzione del progetto è ricaduta su un modello a grafo.
 I dati sono stati ottenuti mediante l'utilizzo di API e web scraping, per arrivare alla costruzione del database tramite l'utilizzo della piattaforma open-source Neo4j.
-Questo database conserva le principali caratteristiche ed i principali vantaggi dei modelli a grafo, e perciò un suo utilizzo futuro potrebbe essere quello di un sistema di raccomandazione.
 % breve descrizione modelli a grafo e vantaggi
-I database a grafo sono organizzati in un insieme di nodi e di relazioni tra i nodi (archi).
-Nodi e archi possono avere proprietà, gli archi rappresentano le relazioni tra i nodi. I nodi possono rappresentare entità, le proprietà sono dati relativi ai nodi.
-Tra le proprietà principali dei modelli a grafo troviamo la caratteristica 'schema free', infatti in un modello a grafo non esiste uno schema fisso in quanto posso rappresentare con un nodo più entità.
+I database a grafo sono organizzati in un insieme di nodi e di relazioni tra i nodi (archi), i quali possono avere proprietà. I nodi possono rappresentare entità, le proprietà sono dati relativi ai nodi.
+Tra le proprietà principali dei modelli a grafo troviamo la caratteristica 'schema free', infatti in un modello a grafo non esiste uno schema fisso e posso modellare nodi e relazioni, con le relative proprietà, senza dover seguire uno schema rigido.
 Una criticità dei modelli a grafo è che non scalano in modo efficace, perciò hanno una gestione dei dati inferiore rispetto ad altri modelli NoSQL.
 Le applicazioni di questa tipologia sono numerose, come ad esempio social networks, sistemi di raccomandazione,
 applicazioni geografiche, logistics networks, financial transaction graphs, master data management, bioinformatics,
@@ -115,15 +114,15 @@ Per l'ottenimento dei dati sono stati utilizzati due metodi diversi: l'utilizzo 
 % breve descrizione API e web scraping
 Le API, Application Programming Interface, sono protocolli utilizzati come interfaccia di comunicazione tra componenti software. Esse consistono in insiemi di routine, strutture dati o variabili che permettono al programmatore di richiamare le funzionalità di un’applicazione di terze parti. \cite{BigDataBook}
 % cit libro
-JSON (JavaScript Object Notation) è il formato con cui tipicamente le API rispondono. Questo formato è basato su due strutture: una collezione di coppie nomi/valore (objects) e una lista ordinata di valori (array). Spesso inoltre i file JSON hanno una struttura nidificata.
-Lo scraping è il processo di estrarre dati da un sistema senza l'utilizzo di APIs. Lo scraping indica anche il processo di estrarre dati da pagine web.
+JSON (JavaScript Object Notation) è il formato con cui tipicamente le Web API rispondono. Questo formato è basato su due strutture: una collezione di coppie nomi/valore (objects) e una lista ordinata di valori (array). Spesso inoltre i file JSON hanno una struttura nidificata.
+Lo scraping è il processo di estrarre dati da un sistema senza l'utilizzo di Web APIs. Lo scraping indica anche il processo di estrarre dati da pagine web.
 
 \subsection{Web API}
-Per l'ottenimento dei dati tramite web API è stato utilizzato il servizio fornito dalla Marvel, che mette a disposizione una sua web API gratuita per ottenere numerosi dati, tra cui quelli relativi a personaggi e fumetti.
+Per l'ottenimento dei dati tramite Web API è stato utilizzato il servizio fornito dalla Marvel, che mette a disposizione una sua web API gratuita per ottenere numerosi dati, tra cui quelli relativi a personaggi e fumetti.
 L'ottenimento dei dati è avvenuto tramite esecuzione di un jupyter notebook ed il linguaggio di programmazione python.
 Di seguito riassumiamo i principali passi di esecuzione del notebook:
 \begin{enumerate}
-\item Ottenimento dei dati dei personaggi in formato JSON tramite chiamata al relativo endpoint della web API a gruppi di 100 personaggi, in quanto corrisponde al limite imposto dagli sviluppatori del servizio.
+\item Ottenimento dei dati dei personaggi in formato JSON tramite chiamata al relativo endpoint della Web API a gruppi di 100 personaggi, in quanto corrisponde al limite imposto dagli sviluppatori del servizio.
 \item Salvataggio su file CSV dei dati relativi ai personaggi ottenuti, in modo da eseguire successive manipolazioni facilmente tramite la libreria \textit{pandas}, prima di inserire i dati nel database.
 \item Ottenimento dei dati dei fumetti in formato JSON tramite chiamata al relativo endpoint della web API a gruppi di 100 fumetti, in quanto corrisponde al limite imposto dagli sviluppatori del servizio.
 \item Salvataggio su file CSV dei dati relativi ai fumetti ottenuti, in modo da eseguire successive manipolazioni facilmente tramite la libreria \textit{pandas}, prima di inserire i dati nel database.
@@ -133,7 +132,7 @@ Per la parte riguardante il Web Scraping come sorgente dati è stata utilizzata 
 Lo scraping è stato effettuato, anche in questo caso, tramite esecuzione di un jupyter notebook ed il linguaggio di programmazione python.
 I principali passi eseguiti dal notebook per completare lo scraping sono i seguenti:
 \begin{enumerate}
-\item Ottenimento, dalla pagina relativa a tutti i personaggi della wiki, dei nomi dei personaggi con i relativi link alla pagina personale. 
+\item Ottenimento, dalla pagina relativa a tutti i personaggi della wiki, contenente i nomi dei personaggi con i relativi link alla pagina personale. 
 \item Per ogni personaggio, aprendo la pagina personale, acquisizione sempre tramite scraping delle informazioni rilevanti, come ad esempio: biografia, lista di film in cui è presente il personaggio, lista di serie tv in cui è presente il personaggio e relazioni con altri personaggi.
 \item Per ogni film trovato nelle pagine dei personaggi, selezionare la pagina relativa al film e ottenere tramite scraping le informazioni del film come ad esempio la trama, i registi, scrittori, compositori, incasso, data di uscita e durata del film.
 \item Per ogni serie, trovata nelle pagine dei personaggi, aprire la pagina relativa alla serie ed ottenere tramite scraping le informazioni della serie in questione, come ad esempio la trama, i registi, i produttori e i compositori.
@@ -143,16 +142,16 @@ I principali passi eseguiti dal notebook per completare lo scraping sono i segue
 \section{Data Exploration}
 La fase di data exploration è stata realizzata sempre utilizzando python, tramite l'ausilio di alcune librerie grafiche per la creazione di visualizzazioni.
 
-\subsection{Data Quality}
+\subsection{Data Cleaning}
 Le principali problematiche nella qualità dei dati sono state riscontrate nelle biografie dei personaggi e nelle relazioni tra i vari personaggi ottenute tramite web scraping.
-\subsubsection{Data Quality e Cleaning Biografia}
+\subsubsection{Data Cleaning Biografia}
 Per quanto riguarda la qualità dei dati delle biografie le principali problematiche sono elencate di seguito:
 \begin{enumerate}
 	\item Il notebook salva i vari paragrafi delle biografie come una lista di stringhe, quindi prima di tutto la biografia viene trasformata in una stringa, concatenando le varie stringhe presenti nella lista e inserendo un carattere newLine fra un elemento e l'altro.
 	\item Inoltre, il notebook  salvava alcuni paragrafi della biografia più volte, per questo motivo prima di concatenare la stringa viene effettuato un controllo per vedere se la porzione di stringa è già stata aggiunta alla stringa finale
 	\item Infine, viene fatto un escaping dei caratteri speciali, come ad esempio il carattere "o", in modo da non avere problemi nell'inserimento nel database dei dati.
 \end{enumerate}
-\subsubsection{Data Quality e Cleaning Relazioni}
+\subsubsection{Data Cleaning Relazioni}
 Per quanto riguarda la qualità dei dati delle relazioni interpersonali ottenute tramite web scraping, la principale problematica consiste nell'assenza in alcune relazioni del nome del personaggio interessato, ad esempio ci sono relazioni che hanno come nome personaggio "Mother", "Father" e così via.
 Per risolvere questo problema il notebook esegue le seguenti operazioni:
 \begin{enumerate}
@@ -163,26 +162,40 @@ Per risolvere questo problema il notebook esegue le seguenti operazioni:
   \includegraphics[scale=0.5]{./Figures/plot_relazioni.png}
   \caption{Grafico relativo alle relazioni tenute rispetto a quelle scartate}
 \end{figure}
-\subsection{Completezza}
-Sono state effettuate altre analisi riguardanti la completezza dei dati, in particolare riguardo ad attributi dei dati ottenuti.
-\subsubsection{Dati personaggi}
-Le analisi di completezza effettuate sui personaggi consistono nel confronto fra i dati ottenuti dalla web API e quelli ottenuti tramite web scraping. In particolare si può riscontrare una corrispondenza di 323 personaggi della web API con quelli ottenuti tramite web scraping, al netto dei 1559 personaggi della web API.
+\subsection{Data Quality}
+Sui personaggi è stata fatta un analisi che consiste nel confronto fra i dati ottenuti dalla web API e quelli ottenuti tramite web scraping. In particolare si può riscontrare una corrispondenza di 323 personaggi della web API con quelli ottenuti tramite web scraping, al netto dei 1559 personaggi della web API.
 \begin{figure}[H]
   \includegraphics[scale=0.5]{./Figures/plot_corrispondenza_personaggi.png}
   \caption{Grafico relativo al numero di personaggi che sono collegabili con i dati ottenuti tramite web scraping.}
 \end{figure}
-\subsubsection{Descrizione fumetti}
-Le analisi di completezza effettuate sulle descrizioni dei fumetti, ottenute tramite web API, consistono nel verificare quanti fumetti possiedono una descrizione. In particolare circa 19000 fumetti non hanno descrizione al netto dei circa 50000 fumetti presenti.
-\begin{figure}[H]
-  \includegraphics[scale=0.5]{./Figures/plot_descrizione_fumetti.png}
-  \caption{Grafico relativo al numero di fumetti con e senza descrizione.}
-\end{figure}
+\subsubsection{Completezza}
+Sono state effettuate altre analisi riguardanti la completezza dei dati, in particolare riguardo alla completezza a livello di tabella dei vari dati ottenuti. Per calcolare la completezza abbiamo utilizzato la seguente formula:
+\[\frac{Numero Missing ValuesTabella}{Numero Colonne * Numero Righe}\]
+\paragraph{Personaggi Web API}
+In seguito all'analisi di completezza riguardante i dati relativi ai personaggi ottenuti tramite consultazione della web API, abbiamo riscontrato che il dataset relativo ha una completezza pari al $92,6 \%$
+\paragraph{Personaggi Web Scraping}
+In seguito all'analisi di completezza riguardante i dati relativi ai personaggi ottenuti tramite Web Scraping, abbiamo riscontrato che il dataset relativo ha una completezza pari al $95,6 \%$
+\paragraph{Fumetti Web API}
+In seguito all'analisi di completezza riguardante i dati relativi ai fumetti ottenuti tramite Web API, abbiamo riscontrato che il dataset relativo ha una completezza pari al $83,9 \%$
+\paragraph{Serie TV Web Scraping}
+In seguito all'analisi di completezza riguardante i dati relativi alle serie TV ottenuti tramite Web API, abbiamo riscontrato che il dataset relativo ha una completezza pari al $96,7 \%$
+\paragraph{Film Web Scraping}
+In seguito all'analisi di completezza riguardante i dati relativi ai Film ottenuti tramite Web API, abbiamo riscontrato che il dataset relativo ha una completezza pari al $89,1 \%$
+\subsection{Ridondanza}
+Un'ulteriore analisi di qualità effettuata consiste nell'analisi di ridondanza dei valori a livello di tabella, in particolare è stato contato, per ogni tabella, il numero di righe con attributo identificativo, come ad esempio nome o titolo, uguali.
+In particolare abbiamo ottenuto per ogni "tabella":
+\begin{itemize}
+    \item Personaggi(Web API): è stato trovato un solo personaggio duplicato.
+    \item Personaggi(Web Scraping): sono stati trovati 0 personaggi duplicati.
+    \item Fumetti(Web API): sono stati trovati 2216 fumetti duplicati.
+    \item Film(Web Scraping): sono stati trovati 0 film duplicati.
+    \item Serie TV(Web Scraping): sono state trovate 0 serie duplicate.
+\end{itemize}
 \section{Data Integration}
-Per il processo di Data Integration sono state collegate, dove possibile, le due sorgenti dati tramite gli schemi dei personaggi, i quali fungono da punto di incontro fra le due sorgenti dati. È stata realizzata un'operazione di record linkage fra i dati dei personaggi.
-\subsection{Data preparation}
-In primo luogo si aggiunge una nuova colonna al dataset del web scraping e della web API, contenente il nome del personaggio senza alcuni caratteri particolari come ad esempio "o" e senza qualsiasi porzione di testo racchiusa fra delle parentesi. Queste operazioni sono state effettuate tramite l'utilizzo della libreria python "re", che fa utilizzo delle regular expression per pulire le stringhe. Le parentesi sono tolte per poter fare il confronto dei personaggi senza tenere conto in questo caso della singola variante del personaggio (ad esempio, stesso personaggio di universi differenti). In output si avranno dunque i due schemi relativi ai personaggi con un campo nome processato come detto precedentemente.
-\subsection{Schema transformation}
-Durante la fase di schema matching è stato effettuato un processo di 'Reverse Engineering' per capire cosa rappresentassero i dati della web API. Tale operazione non è stata fatta per lo scraping, in quanto abbiamo scelto noi quali dati prendere e dunque lo schema era già chiaro a priori.
+Per il processo di Data Integration è stato scelto di integrazione fra le due basi di dati: sono state collegate, dove possibile, le due sorgenti dati tramite gli schemi dei personaggi, i quali fungono da punto di incontro fra le due sorgenti dati. È stata realizzata un'operazione di record linkage fra i dati dei personaggi.
+
+\subsection{Schema Transformation}
+Durante la fase di schema transformation è stato effettuato un processo di 'Reverse Engineering' per capire cosa rappresentassero i dati della web API. Tale operazione non è stata fatta per lo scraping, in quanto abbiamo scelto noi quali dati prendere e dunque lo schema era già chiaro a priori.
 L'analisi dello schema relativo ai personaggi è così composto:
 
 \begin{enumerate}
@@ -219,13 +232,15 @@ L'analisi dello schema relativo ai fumetti ottenuti tramite web API ha permesso 
 %\end{enumerate}
 \subsection{Corrispondences Investigation}
 Durante la fase di \textit{Corrispondences Investigation}, si è notato che si possono unire le due basi di dati sulla base dei personaggi, più specificatamente è possibile stabilire un collegamento fra i personaggi sulla base del loro nome. Dopo varie analisi si è notato che, sia nel caso della base di dati ottenuta tramite consultazione della web API sia di quella ottenuta tramite web scraping, un personaggio è identificato tramite un nome privo di parentesi e un'eventuale variante del personaggio è identificata da un nome all'interno della parentesi. Alla luce di queste considerazioni una regola di confronto fra i due schemi consiste nel vedere se due nomi di personaggi sono uguali dopo aver rimosso parentesi ed eventuali testi all'interno delle parentesi.
+\subsection{Data Preparation}
+In seguito alle analisi effettuate, primo luogo si aggiunge una nuova colonna al dataset del web scraping e della web API, contenente il nome del personaggio senza alcuni caratteri particolari come ad esempio "\textbackslash n" e senza qualsiasi porzione di testo racchiusa fra delle parentesi. Queste operazioni sono state effettuate tramite l'utilizzo della libreria python "re", che fa utilizzo delle regular expression per pulire le stringhe. Le parentesi sono tolte per poter fare il confronto dei personaggi senza tenere conto in questo caso della singola variante del personaggio (ad esempio, stesso personaggio di universi differenti). In output si avranno dunque i due schemi relativi ai personaggi con un campo nome processato come detto precedentemente.
 \subsection{Schemas Integration}
-La fase di schemas integration avviene durante l'inserimento dei dati nel database: per tutti i record presenti nei due schemi relativi ai personaggi vengono rimosse le porzioni di stringa contenute all'interno di parentesi tramite l'utilizzo della libreria \textit{re}; in seguito viene creato all'interno del database un nodo di tipo \textit{character} se non è già presente un nodo dello stesso tipo con lo stesso nome.
-Al nodo character, sia nel caso in cui sia già stato creato oppure no, viene collegato un nodo \textit{Character Variant} identificato tramite nome completo, ovvero il nome prima della rimozione delle parentesi, contenente tutte le informazioni presenti nel record del personaggio in esame. Ovviamente anche il nodo \textit{Character Variant} viene creato solo qualora non esista già, mentre in caso contrario vengono aggiunte solo le informazioni mancanti presenti nella base di dati da cui proviene il personaggio in esame.
+La fase di schemas integration avviene durante l'inserimento dei dati nel database: viene creato all'interno del database un nodo di tipo \textit{character} se non è già presente un nodo dello stesso tipo con lo stesso nome. Il nome utilizzato per la creazione è quello creato al passo precedente, ovvero senza caratteri speciali e parentesi.
+Al nodo character, sia nel caso in cui sia già stato creato o che fosse già presente, viene collegato un nodo \textit{Character Variant} identificato tramite nome completo, ovvero il nome prima della rimozione delle parentesi, contenente tutte le informazioni presenti nel record del personaggio in esame. Ovviamente anche il nodo \textit{Character Variant} viene creato solo qualora non esista già, mentre in caso contrario vengono aggiunte solo le informazioni mancanti presenti nella base di dati da cui proviene il personaggio in esame. In questo modo possiamo tener conto sia del singolo personaggio base sia delle sue varianti. In questo modo quando due nodi \textit{character variant} hanno lo stesso nome, le informazioni presenti su entrambe le fonti dati saranno aggiunte allo stesso modo, unendo le informazioni.
 \section{Database}
 Il database scelto per lo storage dei dati è un database a grafo. Di seguito elenchiamo i principali motivi che hanno portato alla scelta di questo modello:
 \begin{enumerate}
-	\item Dati non in real time: la mole di dati riguardante l'universo Marvel non è enorme e non necessita di un inserimento di dati (near)real-time, quindi le operazioni di scrittura sono relativamente poche e le operazioni in lettura sono molte di più; proprio per questo motivo risulta più idoneo l'utilizzo di un database a grafo, in quanto lento in scrittura ma veloce in lettura.
+	\item Dati non in real time: la mole di dati riguardante l'universo Marvel non è enorme e non necessita di un inserimento di dati (near) real-time, quindi le operazioni di scrittura sono relativamente poche e le operazioni in lettura sono molte di più; proprio per questo motivo risulta più idoneo l'utilizzo di un database a grafo, in quanto lento in scrittura ma veloce in lettura.
 	\item Lo scopo del database è di mostrare le varie relazioni fra i prodotti Marvel e per questo motivo un database a grafo rappresenta la soluzione ideale, in quanto è basato sul concetto di relazioni e collegamenti.
 \end{enumerate}
 \subsection{Struttura Database}
@@ -278,10 +293,12 @@ Fra i nodi del database sono state create $117763$ relazioni distribuite come di
 	Variante di & 5284 \\ [0.5ex] \hline 
 \end{tabular}
 \end{center}
-\begin{figure}[H]
-  \includegraphics[scale=0.27]{./Figures/comic-variant.png}
+\begin{center}
+    \begin{figure}[H]
+  \includegraphics[scale=0.22]{./Figures/comic-variant.png}
   \caption{Visualizzazione di alcuni nodi Character variant (Viola) in relazione a dei nodi Comic (Arancione)}
 \end{figure}
+\end{center}
 \subsection{Alcune Query}
 CQL, ovvero Cypher Query Language è il linguaggio di query per interrogare database a grafo, tra cui proprio Neo4j. Cypher è un linguaggio di tipo dichiarativo e pattern-matching, ed inoltre ha una sintassi simile ad SQL.
 Grazie alla struttura a grafo del database è possibile ottenere facilmente tramite query relazioni fra i nodi. Ad esempio, potremmo trovare i personaggi conosciuti dal personaggio "Iron Man" e che sono presenti nel film \textit{Avengers}. 
